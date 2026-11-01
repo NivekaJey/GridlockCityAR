@@ -4,41 +4,36 @@ using System.Collections.Generic;
 public class RAGVisualizer : MonoBehaviour
 {
     [Header("Cars (Processes)")]
-    public Transform p1; // Zippy
-    public Transform p2; // Taxi Tom
-    public Transform p3; // Big Bus
-    public Transform p4; // Suvi
-    public Transform p5; // Ambulance
+    public Transform p1, p2, p3, p4, p5;
 
     [Header("Boxes (Resources)")]
-    public Transform r1; // Box NW
-    public Transform r2; // Box NE
-    public Transform r3; // Box SE
-    public Transform r4; // Box SW
+    public Transform r1, r2, r3, r4;
 
     private Material amberMat;
     private Material redMat;
 
     void Start()
     {
-        // Create materials for the lines
-        amberMat = new Material(Shader.Find("Sprites/Default"));
+        Shader lineShader = Shader.Find("Universal Render Pipeline/Unlit");
+        if (lineShader == null) lineShader = Shader.Find("Sprites/Default");
+
+        amberMat = new Material(lineShader);
         amberMat.color = new Color(1f, 0.75f, 0f); // Amber
 
-        redMat = new Material(Shader.Find("Sprites/Default"));
+        redMat = new Material(lineShader);
         redMat.color = Color.red;
 
-        // Draw the 4 Request Arrows (Car -> Box it wants next)
-        DrawArrow(p1, r2, amberMat); // P1 wants R2
-        DrawArrow(p2, r3, amberMat); // P2 wants R3
-        DrawArrow(p3, r4, amberMat); // P3 wants R4
-        DrawArrow(p4, r1, amberMat); // P4 wants R1
+        // Draw Request Arrows (Car -> Box) - Amber
+        DrawArrow(p1, r2, amberMat);
+        DrawArrow(p2, r3, amberMat);
+        DrawArrow(p3, r4, amberMat);
+        DrawArrow(p4, r1, amberMat);
 
-        // Draw the 4 Allocation Arrows (Box -> Car currently inside)
-        DrawArrow(r1, p1, redMat); // R1 allocated to P1
-        DrawArrow(r2, p2, redMat); // R2 allocated to P2
-        DrawArrow(r3, p3, redMat); // R3 allocated to P3
-        DrawArrow(r4, p4, redMat); // R4 allocated to P4
+        // Draw Allocation Arrows (Box -> Car) - Red
+        DrawArrow(r1, p1, redMat);
+        DrawArrow(r2, p2, redMat);
+        DrawArrow(r3, p3, redMat);
+        DrawArrow(r4, p4, redMat);
     }
 
     void DrawArrow(Transform start, Transform end, Material mat)
@@ -52,9 +47,22 @@ public class RAGVisualizer : MonoBehaviour
         lr.endWidth = 0.015f;
         lr.positionCount = 2;
 
-        // Raise the lines slightly so they float above the grid
-        Vector3 startPos = start.position + Vector3.up * 0.3f;
-        Vector3 endPos = end.position + Vector3.up * 0.3f;
+        Vector3 startPos = start.position;
+        Vector3 endPos = end.position;
+
+        // If it's the red allocation arrow, we offset it so it's visible
+        if (mat == redMat)
+        {
+            // Push the red arrow outwards and higher so it doesn't hide inside the car
+            startPos = startPos + new Vector3(0.3f, 0.4f, 0.3f);
+            endPos = endPos + new Vector3(0, 0.4f, 0);
+        }
+        else
+        {
+            // Keep yellow arrows floating slightly above the ground
+            startPos += Vector3.up * 0.3f;
+            endPos += Vector3.up * 0.3f;
+        }
 
         lr.SetPosition(0, startPos);
         lr.SetPosition(1, endPos);
