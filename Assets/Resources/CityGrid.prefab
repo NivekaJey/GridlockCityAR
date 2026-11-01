@@ -1355,6 +1355,7 @@ MonoBehaviour:
   towButton: {fileID: 639313520652576057}
   backOutButton: {fileID: 7604136611399504896}
   carP1: {fileID: 8445972708438648284}
+  cityAnimator: {fileID: 4720594958297026914}
 --- !u!1 &6147169942543283247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,6 +1493,57 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &6760617397791356142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 773462226631396386}
+  - component: {fileID: 4720594958297026914}
+  m_Layer: 0
+  m_Name: AnimManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &773462226631396386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6760617397791356142}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3507252836791881472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4720594958297026914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6760617397791356142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bb94fbf03388c44bdece1f65e47192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CityAnimator
+  cars:
+  - {fileID: 3221155322888245673}
+  - {fileID: 2303239030103908887}
+  - {fileID: 3197367877545493854}
+  - {fileID: 554656857311077955}
+  - {fileID: 1056598859987615919}
+  cycleRing: {fileID: 1760072074287398712}
 --- !u!1 &7017638466949276946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1697,7 @@ Transform:
   - {fileID: 3556187369615059694}
   - {fileID: 5109017351677691434}
   - {fileID: 8528842465965373101}
+  - {fileID: 773462226631396386}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8153216924475210353

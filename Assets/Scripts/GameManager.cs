@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [Header("3D Objects")]
     public GameObject carP1; // We will tow this car
 
+    public CityAnimator cityAnimator;
+
     private bool isScanned = false;
     private bool isDeadlockResolved = false;
 
@@ -44,6 +46,8 @@ public class GameManager : MonoBehaviour
 
         // Disable scan button to prevent spamming
         scanButton.interactable = false;
+
+        cityAnimator.StartDeadlock();
     }
 
     void OnTowClicked()
