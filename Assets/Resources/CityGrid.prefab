@@ -486,8 +486,62 @@ Transform:
   - {fileID: 3197367877545493854}
   - {fileID: 554656857311077955}
   - {fileID: 1056598859987615919}
+  - {fileID: 3556187369615059694}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8153216924475210353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3556187369615059694}
+  - component: {fileID: 7048510829560025591}
+  m_Layer: 0
+  m_Name: RAG_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3556187369615059694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153216924475210353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3507252836791881472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7048510829560025591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153216924475210353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1daa9d7f58d85fc4394ec278b51cebdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RAGVisualizer
+  p1: {fileID: 3221155322888245673}
+  p2: {fileID: 2303239030103908887}
+  p3: {fileID: 3197367877545493854}
+  p4: {fileID: 554656857311077955}
+  p5: {fileID: 1056598859987615919}
+  r1: {fileID: 8790005534124163398}
+  r2: {fileID: 1271239010691842857}
+  r3: {fileID: 4090479120665704381}
+  r4: {fileID: 7163177351551512856}
 --- !u!1001 &865105529929500239
 PrefabInstance:
   m_ObjectHideFlags: 0
