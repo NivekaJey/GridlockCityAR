@@ -48,13 +48,13 @@ public class RAGVisualizer : MonoBehaviour
         LineRenderer lr = lineObj.AddComponent<LineRenderer>();
 
         lr.material = mat;
-        lr.startWidth = 0.05f;
-        lr.endWidth = 0.05f;
+        lr.startWidth = 0.015f;
+        lr.endWidth = 0.015f;
         lr.positionCount = 2;
 
         // Raise the lines slightly so they float above the grid
-        Vector3 startPos = start.position + Vector3.up * 0.15f;
-        Vector3 endPos = end.position + Vector3.up * 0.15f;
+        Vector3 startPos = start.position + Vector3.up * 0.3f;
+        Vector3 endPos = end.position + Vector3.up * 0.3f;
 
         lr.SetPosition(0, startPos);
         lr.SetPosition(1, endPos);
